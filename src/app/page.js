@@ -12,11 +12,8 @@ export default function Home() {
           rel="stylesheet"
         />
     </Head>
-    <div>
+    <div className="p-5">
       <Navbar />
-      <main className="p-8">
-        <h1 className="text-3xl font-bold">Welcome to the Navbar Example!</h1>
-      </main>
     </div>
     </>
   );

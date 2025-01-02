@@ -1,60 +1,61 @@
-"use client";
+"use client"; 
 
-import { useState } from "react";
+import { useState } from 'react';
+import Image from 'next/image';
 
 export default function Navbar() {
-    const [menuOpen, setMenuOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false); 
 
-  return (
-    <nav className="flex items-center justify-between px-6 py-4 bg-gray-100 shadow-md">
-      {/* Logo */}
-      <div className="text-xl font-bold">
-        <a href="/">Logo</a>
-      </div>
+    return (
+        <>
+            <nav className="flex justify-between items-center w-full h-14 p-5">
+                {/* Logo Section */}
+                <div className="relative w-32 h-14">
+                    <Image
+                        src="/images/logoSVG.svg"
+                        alt="Logo"
+                        layout="responsive"
+                        width={128}
+                        height={56}
+                        quality={100} 
+                    />
+                </div>
 
-      {/* Right Section */}
-      <div className="flex items-center">
-        {/* Get Started Button */}
-        <a
-          href="/get-started"
-          className="hidden md:inline-block px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600"
-        >
-          Get Started
-        </a>
+                {/* Right Section */}
+                <div className="flex items-center justify-end space-x-4">
+                    <a
+                        href="/"
+                        className="px-4 py-2 text-white rounded-md"
+                        style={{ backgroundColor: '#ff8a00' }} 
+                    >
+                        Get Started
+                    </a>
 
-        {/* Hamburger Menu Button */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="ml-4 p-2 text-gray-700 rounded-md hover:bg-gray-200 md:hidden"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
-      </div>
+                    {/* Menu Icon */}
+                    <div className="cursor-pointer" onClick={() => setIsOpen(prev => !prev)}>
+                        <Image
+                            src="/images/hamburger.svg"
+                            alt="Menu"
+                            width={24}
+                            height={24}
+                        />
+                    </div>
+                </div>
+            </nav>
 
-      {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="absolute top-16 right-6 bg-gray-100 rounded-md shadow-lg w-40 py-2 md:hidden">
-          <a
-            href="/get-started"
-            className="block px-4 py-2 text-gray-700 hover:bg-gray-200"
-          >
-            Get Started
-          </a>
-        </div>
-      )}
-    </nav>
+            {/* Side Menu */}
+            <div className={`fixed top-0 right-0 h-full bg-gray-800 text-white w-64 transition-transform duration-300 transform ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+                <div className="flex items-center justify-end p-4">
+                    <button onClick={() => setIsOpen(false)} className="text-white">Close</button>
+                </div>
+                <ul className="mt-10">
+                    {["Home", "About", "Agency Automation", "Pricing", "Contact Us"].map((page, index) => (
+                        <li key={index} className="p-4 hover:bg-gray-700">
+                            <a href={`/${page.toLowerCase().replace(/\s/g, '')}`}>{page}</a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </>
     );
 }
