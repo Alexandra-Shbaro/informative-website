@@ -1,5 +1,5 @@
-import './globals.css'; // Import global CSS
-import Head from 'next/head'; // Import Head for custom fonts or meta tags
+import './globals.css'; 
+import Head from 'next/head'; 
 import Navbar from "./components/navbar";
 
 
