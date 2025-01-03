@@ -3,19 +3,19 @@
 @tailwind utilities;
 
 :root {
-  --background: #fcfefc;
+  --background: #fcfcfc;
   --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #fcfcfc;
   }
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: #fcfcfc;
   font-family: 'Montserrat', sans-serif;
 }

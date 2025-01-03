@@ -40,9 +40,7 @@ export default function Navbar() {
                 </div>
             </nav>
 
-            {/* Side Menu */}
             <div className={`fixed top-0 right-0 h-full bg-softBlack text-white w-96 transition-transform duration-300 transform ${isOpen ? 'translate-x-0' : 'translate-x-full'}`} aria-hidden={!isOpen}>
-                {/* Close Button */}
                 <div className="cursor-pointer flex items-center justify-end p-4"
                     onClick={() => setIsOpen(false)}
                 >
@@ -54,7 +52,6 @@ export default function Navbar() {
                     />
                 </div>
 
-                {/* Menu Items */}
                 <ul className="m-8 space-y-1 text-lg">
                     <li>
                         <a href="/" className="block p-4 hover:lightGrey rounded-md">Home</a>
@@ -75,7 +72,6 @@ export default function Navbar() {
 
                 <div className="absolute bottom-0 left-0 w-full p-4 text-sm">
                     <div className="flex justify-between items-center">
-                        {/* Social Media Links */}
                         <div className="flex flex-col space-x-4 space-y-4">
                             <p className="text-sm">Find us, Everywhere !</p>
                             <div className="flex space-x-4">
@@ -97,7 +93,6 @@ export default function Navbar() {
                             </div>
                         </div>
 
-                        {/* Contact Information */}
                         <div className="text-right">
                             <p>Contact Us</p>
                             <a href="mailto:lumi@support.com" className="hover:underline">
