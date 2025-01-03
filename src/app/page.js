@@ -1,45 +1,25 @@
 "use client";
 import './globals.css';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
-
-  const [isMounted, setIsMounted] = useState(false)
-  const [animate, setAnimate] = useState(false)
-  const [showNewText, setShowNewText] = useState(false)
-  const animationRef = useRef(null)
+  const [isMounted, setIsMounted] = useState(false);
+  const [animate, setAnimate] = useState(false);
+  const [showNewText, setShowNewText] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true)
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          const animateTimeout = setTimeout(() => setAnimate(true), 500)
-          const textTimeout = setTimeout(() => setShowNewText(true), 2500)
-
-          observer.disconnect()
-
-          return () => {
-            clearTimeout(animateTimeout)
-            clearTimeout(textTimeout)
-          }
-        }
-      },
-      {
-        threshold: 0.5
-      }
-    )
-
-    if (animationRef.current) {
-      observer.observe(animationRef.current)
+    setIsMounted(true);
+    const animateTimeout = setTimeout(() => setAnimate(true), 500);
+    const textTimeout = setTimeout(() => setShowNewText(true), 2500);
+    
+    return () => {
+      clearTimeout(animateTimeout);
+      clearTimeout(textTimeout);
     }
-
-    return () => observer.disconnect()
   }, [])
 
   if (!isMounted) {
-    return null
+    return null;
   }
 
   return (
@@ -74,54 +54,54 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <div ref={animationRef} className="flex items-center justify-center min-h-screen bg-gray-900">
-        <div className="relative">
-          {/* Breaking box */}
-          <div className={`relative ${animate ? 'animate-[shake_0.8s_ease-in-out]' : ''}`}>
-            <div
-              className={`
-                border-4 border-white p-8 text-4xl font-bold text-white
-                ${animate ? 'animate-[disappear_0.5s_ease-in-out_forwards_0.8s]' : ''}
-                relative
-              `}
-            >
-              RULES
-            </div>
-
-            {/* Breaking pieces */}
-            {animate && (
-              <>
-                {/* Top pieces */}
-                <div className="absolute top-0 left-0 w-1/4 h-1/4 border-t-4 border-l-4 border-white animate-[flyTopLeft_1.5s_ease-in-out_forwards_0.8s]" />
-                <div className="absolute top-0 left-1/4 w-1/4 h-1/4 border-t-4 border-white animate-[flyTop1_1.5s_ease-in-out_forwards_0.8s]" />
-                <div className="absolute top-0 right-1/4 w-1/4 h-1/4 border-t-4 border-white animate-[flyTop2_1.5s_ease-in-out_forwards_0.8s]" />
-                <div className="absolute top-0 right-0 w-1/4 h-1/4 border-t-4 border-r-4 border-white animate-[flyTopRight_1.5s_ease-in-out_forwards_0.8s]" />
-
-                {/* Middle pieces */}
-                <div className="absolute top-1/4 left-0 w-1/4 h-1/2 border-l-4 border-white animate-[flyLeft_1.5s_ease-in-out_forwards_0.8s]" />
-                <div className="absolute top-1/4 right-0 w-1/4 h-1/2 border-r-4 border-white animate-[flyRight_1.5s_ease-in-out_forwards_0.8s]" />
-
-                {/* Bottom pieces */}
-                <div className="absolute bottom-0 left-0 w-1/4 h-1/4 border-b-4 border-l-4 border-white animate-[flyBottomLeft_1.5s_ease-in-out_forwards_0.8s]" />
-                <div className="absolute bottom-0 left-1/4 w-1/4 h-1/4 border-b-4 border-white animate-[flyBottom1_1.5s_ease-in-out_forwards_0.8s]" />
-                <div className="absolute bottom-0 right-1/4 w-1/4 h-1/4 border-b-4 border-white animate-[flyBottom2_1.5s_ease-in-out_forwards_0.8s]" />
-                <div className="absolute bottom-0 right-0 w-1/4 h-1/4 border-b-4 border-r-4 border-white animate-[flyBottomRight_1.5s_ease-in-out_forwards_0.8s]" />
-              </>
-            )}
-          </div>
-
-          {/* New text that fades in */}
-          <div className={`
-              absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-              text-3xl font-bold text-white text-center
-              opacity-0 ${showNewText ? 'animate-[fadeIn_1s_ease-in-out_forwards]' : ''}
+      <div className="flex items-center justify-center min-h-screen bg-gray-900">
+      <div className="relative">
+        {/* Breaking box */}
+        <div className={`relative ${animate ? 'animate-[shake_0.8s_ease-in-out]' : ''}`}>
+          <div
+            className={`
+              border-4 border-white p-8 text-4xl font-bold text-white
+              ${animate ? 'animate-[disappear_0.5s_ease-in-out_forwards_0.8s]' : ''}
+              relative
             `}
           >
-            Lumi breaks old marketing rules
-            <p className="text-m">Break free from fragmented marketing chaos. </p>
+            RULES
           </div>
+          
+          {/* Breaking pieces */}
+          {animate && (
+            <>
+              {/* Top pieces */}
+              <div className="absolute top-0 left-0 w-1/4 h-1/4 border-t-4 border-l-4 border-white animate-[flyTopLeft_1.5s_ease-in-out_forwards_0.8s]" />
+              <div className="absolute top-0 left-1/4 w-1/4 h-1/4 border-t-4 border-white animate-[flyTop1_1.5s_ease-in-out_forwards_0.8s]" />
+              <div className="absolute top-0 right-1/4 w-1/4 h-1/4 border-t-4 border-white animate-[flyTop2_1.5s_ease-in-out_forwards_0.8s]" />
+              <div className="absolute top-0 right-0 w-1/4 h-1/4 border-t-4 border-r-4 border-white animate-[flyTopRight_1.5s_ease-in-out_forwards_0.8s]" />
+              
+              {/* Middle pieces */}
+              <div className="absolute top-1/4 left-0 w-1/4 h-1/2 border-l-4 border-white animate-[flyLeft_1.5s_ease-in-out_forwards_0.8s]" />
+              <div className="absolute top-1/4 right-0 w-1/4 h-1/2 border-r-4 border-white animate-[flyRight_1.5s_ease-in-out_forwards_0.8s]" />
+              
+              {/* Bottom pieces */}
+              <div className="absolute bottom-0 left-0 w-1/4 h-1/4 border-b-4 border-l-4 border-white animate-[flyBottomLeft_1.5s_ease-in-out_forwards_0.8s]" />
+              <div className="absolute bottom-0 left-1/4 w-1/4 h-1/4 border-b-4 border-white animate-[flyBottom1_1.5s_ease-in-out_forwards_0.8s]" />
+              <div className="absolute bottom-0 right-1/4 w-1/4 h-1/4 border-b-4 border-white animate-[flyBottom2_1.5s_ease-in-out_forwards_0.8s]" />
+              <div className="absolute bottom-0 right-0 w-1/4 h-1/4 border-b-4 border-r-4 border-white animate-[flyBottomRight_1.5s_ease-in-out_forwards_0.8s]" />
+            </>
+          )}
+        </div>
+
+        {/* New text that fades in */}
+        <div 
+          className={`
+            absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+            text-3xl font-bold text-white text-center
+            opacity-0 ${showNewText ? 'animate-[fadeIn_1s_ease-in-out_forwards]' : ''}
+          `}
+        >
+          Lumi breaks old marketing rules
         </div>
       </div>
+
       <style jsx>{`
         @keyframes shake {
           0%, 100% { transform: translateX(0) rotate(0); }
@@ -191,6 +171,7 @@ export default function Home() {
           }
         }
       `}</style>
+    </div>
     </>
   );
 }
