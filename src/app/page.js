@@ -25,8 +25,8 @@ export default function Home() {
 
   return (
     <>
-    <main className="ml-20 min-h-screen flex items-center justify-center">
-      <div className="w-full max-w-4xl ">
+    <main className="min-h-screen flex items-center justify-center">
+      <div className="w-full max-w-4xl pl-16">
         <div className="text-left">
           <h2 className="text-black text-5xl font-bold tracking-wide">
             Create
@@ -56,7 +56,7 @@ export default function Home() {
       </div>
     </main>
 
-    <div className="flex items-center justify-center min-h-screen bg-gray-900">
+    <div className="flex items-center justify-center min-h-screen bg-softBlack">
       <div className="relative">
         {/* Breaking box */}
         <div className={`relative ${animate ? 'animate-[shake_0.8s_ease-in-out]' : ''}`}>
