@@ -38,12 +38,13 @@ export default function Home() {
             Math.random() * (parseFloat(section.bottom) - parseFloat(section.top)) +
             parseFloat(section.top)
           }%`,
-          [side]: `${Math.random() * 5 + 2}%`, // Bring bulbs closer to the center
+          [side]: `${Math.random() * 2 + 5}%`, // Bring bulbs closer to the center
           animationDuration: `${Math.random() * 2 + 2}s`,
-          size: Math.random() * 20 + 25, // Increase bulb sizes
+          size: Math.random() * 20 + 30, // Increase bulb sizes slightly
         };
       });
-  };
+  };  
+  
   
 
   const leftBulbs = generateBulbs(6, 'left');
