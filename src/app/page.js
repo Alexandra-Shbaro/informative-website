@@ -6,23 +6,23 @@ export default function Home() {
   const [isMounted, setIsMounted] = useState(false);
   const [animate, setAnimate] = useState(false);
   const [showNewText, setShowNewText] = useState(false);
-  const [bulbs] = useState(() => {
+  const [bulbs, setBulbs] = useState([]);
+
+  useEffect(() => {
     const generateBulbs = (count) => {
-      const bulbs = [];
+      const newBulbs = [];
       for (let i = 0; i < count; i++) {
-        bulbs.push({
+        newBulbs.push({
           top: Math.random() * 100,
           left: Math.random() * 100,
           size: Math.random() * 40 + 20,
           delay: Math.random() * 2,
         });
       }
-      return bulbs;
+      return newBulbs;
     };
-    return generateBulbs(12);
-  });
 
-  useEffect(() => {
+    setBulbs(generateBulbs(12));
     setIsMounted(true);
     const animateTimeout = setTimeout(() => setAnimate(true), 500);
     const textTimeout = setTimeout(() => setShowNewText(true), 2500);
