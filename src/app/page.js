@@ -22,13 +22,25 @@ export default function Home() {
     return null;
   }
 
+  const textSections = [
+    { top: '10%', bottom: '30%' }, // For "Create"
+    { top: '40%', bottom: '60%' }, // For "Communicate"
+    { top: '70%', bottom: '90%' }, // For "Elevate"
+  ];
+
   const generateBulbs = (count, side) => {
-    return Array(count).fill().map((_, index) => ({
-      top: `${Math.random() * 80 + 10}%`,
-      [side]: `${Math.random() * 30}%`,
-      animationDuration: `${Math.random() * 2 + 2}s`,
-      size: Math.random() * 10 + 15
-    }));
+    return Array(count)
+      .fill()
+      .map((_, index) => {
+        const section = textSections[Math.floor(Math.random() * textSections.length)];
+        return {
+          top: `${Math.random() * (parseFloat(section.bottom) - parseFloat(section.top)) +
+            parseFloat(section.top)}%`,
+          [side]: `${Math.random() * 10 + 5}%`, // Keeping bulbs close to the edges
+          animationDuration: `${Math.random() * 2 + 2}s`,
+          size: Math.random() * 10 + 15,
+        };
+      });
   };
 
   const leftBulbs = generateBulbs(6, 'left');
