@@ -34,14 +34,17 @@ export default function Home() {
       .map((_, index) => {
         const section = textSections[Math.floor(Math.random() * textSections.length)];
         return {
-          top: `${Math.random() * (parseFloat(section.bottom) - parseFloat(section.top)) +
-            parseFloat(section.top)}%`,
-          [side]: `${Math.random() * 10 + 5}%`, // Keeping bulbs close to the edges
+          top: `${
+            Math.random() * (parseFloat(section.bottom) - parseFloat(section.top)) +
+            parseFloat(section.top)
+          }%`,
+          [side]: `${Math.random() * 5 + 2}%`, // Bring bulbs closer to the center
           animationDuration: `${Math.random() * 2 + 2}s`,
-          size: Math.random() * 10 + 15,
+          size: Math.random() * 20 + 25, // Increase bulb sizes
         };
       });
   };
+  
 
   const leftBulbs = generateBulbs(6, 'left');
   const rightBulbs = generateBulbs(6, 'right');
