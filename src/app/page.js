@@ -54,7 +54,9 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <div className="flex items-center justify-center min-h-screen bg-gray-900">
+
+
+      <div className="flex items-center justify-center min-h-screen bg-logoOrange">
       <div className="relative">
         {/* Breaking box */}
         <div className={`relative ${animate ? 'animate-[shake_0.8s_ease-in-out]' : ''}`}>
@@ -98,8 +100,12 @@ export default function Home() {
             opacity-0 ${showNewText ? 'animate-[fadeIn_1s_ease-in-out_forwards]' : ''}
           `}
         >
-          Lumi breaks old marketing rules
+          <div className="w-96 md:w-[32rem] lg:w-[40rem]"> {/* Added wider container */}
+              <p className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">Lumi breaks old marketing rules</p>
+              <p className="text-xl md:text-2xl mt-6 text-white px-4">Break free from fragmented marketing chaos.</p>
+          </div>
         </div>
+        
       </div>
 
       <style jsx>{`
