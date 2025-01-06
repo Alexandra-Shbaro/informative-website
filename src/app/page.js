@@ -13,10 +13,15 @@ export default function Home() {
       const bulbs = [];
       const rows = 4; // Number of rows
       const cols = 5; // Number of columns (rows * cols should equal `count`)
-
+    
       // Distribute bulbs in a grid-like pattern
       for (let row = 0; row < rows; row++) {
         for (let col = 0; col < cols; col++) {
+          // Exclude the diagonal positions where row == col
+          if (row === col && !(row === 0 && col === 0)) {
+            continue;
+          }
+    
           const top = row * (100 / rows) + Math.random() * 5; // Spread rows evenly, with slight random offset
           const left = col * (100 / cols) + Math.random() * 5; // Spread columns evenly, with slight random offset
           bulbs.push({
@@ -27,13 +32,14 @@ export default function Home() {
           });
         }
       }
-
+    
       // Shuffle bulbs randomly once for natural distribution
       return bulbs.sort(() => Math.random() - 0.5);
     };
-
+    
     const bulbs = generateBulbs(20); // Generate 20 bulbs
     setBulbs(bulbs);
+    
     setIsMounted(true);
     const animateTimeout = setTimeout(() => setAnimate(true), 500);
     const textTimeout = setTimeout(() => setShowNewText(true), 2500);
@@ -179,8 +185,6 @@ export default function Home() {
                   />
                 </g>
               </svg>
-
-
             </div>
           ))}
         </div>
