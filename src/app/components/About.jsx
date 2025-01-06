@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const LumiLanding = () => {
+const About = () => {
     const [isVisible, setIsVisible] = useState({});
 
     useEffect(() => {
@@ -43,10 +43,20 @@ const LumiLanding = () => {
 
                 {/* Content Sections */}
                 {[...Array(4)].map((_, i) => (
-                    <section key={i} id={`section-${i}`} className={`relative ${i % 2 === 0 ? 'bg-[#2C3333]/50' : ''}`}>
+                    <section 
+                        key={i} 
+                        id={`section-${i}`} 
+                        className={`relative ${i % 2 === 0 ? 'bg-[#2C3333]/50' : ''}`}
+                    >
                         <div className="container mx-auto px-4">
                             <div className={`flex flex-col gap-12 ml-6 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} p-10 items-center`}>
-                                <div className="w-full md:w-1/2">
+                                <div 
+                                    className={`w-full md:w-1/2 transform transition-all duration-1000 ${
+                                        isVisible[`section-${i}`]
+                                            ? 'translate-x-0 opacity-100'
+                                            : `${i % 2 === 0 ? '-translate-x-full' : 'translate-x-full'} opacity-0`
+                                    }`}
+                                >
                                     <div className="relative group">
                                         <div className="absolute inset-0 bg-gradient-to-r from-[#FF8A00] to-[#FFD700] opacity-75 blur-xl group-hover:opacity-100 transition-opacity duration-500"></div>
                                         <div className="relative bg-[#2C3333] p-10 rounded-xl">
@@ -54,21 +64,28 @@ const LumiLanding = () => {
                                                 {[
                                                     'We don\'t just automate processes—we orchestrate your brand\'s entire narrative.',
                                                     'Imagine a platform that\'s part strategist, part storyteller, and part efficiency engine.',
-                                                    'From conceptualization to execution, we\'re not just a tool—we\'re your strategic partner.',
                                                     'Lumi cuts through complexity, delivering precision-targeted content that resonates.',
+                                                    'From conceptualization to execution, we\'re not just a tool—we\'re your strategic partner.',
                                                 ][i]}
                                             </p>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="w-full flex justify-center md:w-1/2">
+                                <div 
+                                    className={`w-full flex justify-center md:w-1/2 transform transition-all duration-1000 delay-200 ${
+                                        isVisible[`section-${i}`]
+                                            ? 'translate-x-0 opacity-100'
+                                            : `${i % 2 === 0 ? 'translate-x-full' : '-translate-x-full'} opacity-0`
+                                    }`}
+                                >
                                     <img
                                         src={[
                                             '/images/img1.jpg',
                                             '/images/img4.jpg',
-                                            '/images/img2.jpg',
-                                            '/images/img3.jpg'
+                                            '/images/img3.jpg',
+                                            '/images/img2.jpg'
                                         ][i]}
+                                        alt={`Section ${i + 1} illustration`}
                                         className="w-[70%] h-auto rounded-lg transition-opacity duration-300 hover:opacity-80"
                                     />
                                 </div>
@@ -81,4 +98,4 @@ const LumiLanding = () => {
     );
 };
 
-export default LumiLanding;
+export default About;

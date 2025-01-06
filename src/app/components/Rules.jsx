@@ -72,7 +72,7 @@ export default function Rules() {
                         <p className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                             Lumi breaks old marketing rules
                         </p>
-                        <p className="text-xl md:text-2xl mt-6 text-white px-4">
+                        <p className="text-xl md:text-2xl mt-6 text-softBlack px-4">
                             Break free from fragmented marketing chaos.
                         </p>
                     </div>
