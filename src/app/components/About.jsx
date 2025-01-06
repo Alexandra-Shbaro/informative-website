@@ -59,7 +59,6 @@ const LumiLanding = () => {
                                 <span className="relative z-10 text-[#FF8A00] font-semibold">
                                     symphonic
                                 </span>
-                                <span className="absolute inset-0 bg-[#FFD700] opacity-20 animate-ping"></span>
                             </span>
                             marketing experience.
                         </p>
