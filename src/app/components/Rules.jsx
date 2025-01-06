@@ -12,7 +12,6 @@ export default function Rules() {
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
-                    // Start animation when the section is visible
                     setAnimate(true);
 
                     const textTimeout = setTimeout(() => setShowNewText(true), 2000);
@@ -28,7 +27,7 @@ export default function Rules() {
                     };
                 }
             },
-            { threshold: 0.3 } // Trigger when 30% of the section is visible
+            { threshold: 0.3 } 
         );
 
         if (sectionRef.current) {
@@ -54,7 +53,6 @@ export default function Rules() {
 
                     {animate && (
                         <>
-                            {/* Add all animated borders */}
                             <div className="absolute top-0 left-0 w-1/4 h-1/4 border-t-4 border-l-4 border-white animate-[flyTopLeft_1.5s_ease-in-out_forwards_0.8s]" />
                             <div className="absolute top-0 left-1/4 w-1/4 h-1/4 border-t-4 border-white animate-[flyTop1_1.5s_ease-in-out_forwards_0.8s]" />
                             <div className="absolute top-0 right-1/4 w-1/4 h-1/4 border-t-4 border-white animate-[flyTop2_1.5s_ease-in-out_forwards_0.8s]" />
