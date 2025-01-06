@@ -26,7 +26,7 @@ const LumiLanding = () => {
     return (
         <div className="min-h-screen bg-[#2C3333] overflow-hidden">
             {/* Animated Background */}
-            <div className="fixed inset-0 opacity-30">
+            {/* <div className="fixed inset-0 opacity-30">
                 <svg className="w-full h-full">
                     <defs>
                         <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -39,7 +39,7 @@ const LumiLanding = () => {
                     </pattern>
                     <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern)" />
                 </svg>
-            </div>
+            </div> */}
 
             <div className="relative">
                 {/* Hero Section */}
