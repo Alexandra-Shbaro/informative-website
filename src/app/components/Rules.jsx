@@ -11,15 +11,13 @@ export default function Rules() {
     useEffect(() => {
         setIsMounted(true);
 
-        // Set animations
         const animateTimeout = setTimeout(() => setAnimate(true), 500);
         const textTimeout = setTimeout(() => setShowNewText(true), 2500);
         
-        // Set the disappear timeout with delay to trigger display change after animation
         const disappearTimeout = setTimeout(() => {
             setDisappear(true);
-            document.getElementById("rules-box").style.display = "none";  // Set display to none after animation
-        }, 3500); // 3500ms matches the duration of the fade-out animation
+            document.getElementById("rules-box").style.display = "none";  
+        }, 3500); 
 
         return () => {
             clearTimeout(animateTimeout);
@@ -37,7 +35,7 @@ export default function Rules() {
             <div className="relative">
                 <div className={`relative ${animate ? 'animate-[shake_0.8s_ease-in-out]' : ''}`}>
                     <div
-                        id="rules-box"  // Add ID for better targeting
+                        id="rules-box" 
                         className={`border-4 border-white p-8 text-4xl font-bold text-white ${animate && !disappear ? 'animate-[disappear_0.8s_ease-in-out_forwards]' : ''} relative`}>
                         RULES
                     </div>
@@ -69,82 +67,6 @@ export default function Rules() {
                     </div>
                 </div>
             </div>
-
-            <style jsx>{`
-                @keyframes shake {
-                    0%, 100% { transform: translateX(0) rotate(0); }
-                    25% { transform: translateX(-10px) rotate(-2deg); }
-                    75% { transform: translateX(10px) rotate(2deg); }
-                }
-
-                @keyframes disappear {
-                    0% {
-                        opacity: 1;
-                    }
-                    100% {
-                        opacity: 0;
-                    }
-                }
-
-                @keyframes flyTopLeft {
-                    0% { transform: translate(0, 0) rotate(0); }
-                    100% { transform: translate(-150px, -150px) rotate(-45deg); opacity: 0; }
-                }
-
-                @keyframes flyTop1 {
-                    0% { transform: translate(0, 0) rotate(0); }
-                    100% { transform: translate(-50px, -200px) rotate(-15deg); opacity: 0; }
-                }
-
-                @keyframes flyTop2 {
-                    0% { transform: translate(0, 0) rotate(0); }
-                    100% { transform: translate(50px, -200px) rotate(15deg); opacity: 0; }
-                }
-
-                @keyframes flyTopRight {
-                    0% { transform: translate(0, 0) rotate(0); }
-                    100% { transform: translate(150px, -150px) rotate(45deg); opacity: 0; }
-                }
-
-                @keyframes flyLeft {
-                    0% { transform: translate(0, 0) rotate(0); }
-                    100% { transform: translate(-200px, 0) rotate(-30deg); opacity: 0; }
-                }
-
-                @keyframes flyRight {
-                    0% { transform: translate(0, 0) rotate(0); }
-                    100% { transform: translate(200px, 0) rotate(30deg); opacity: 0; }
-                }
-
-                @keyframes flyBottomLeft {
-                    0% { transform: translate(0, 0) rotate(0); }
-                    100% { transform: translate(-150px, 150px) rotate(45deg); opacity: 0; }
-                }
-
-                @keyframes flyBottom1 {
-                    0% { transform: translate(0, 0) rotate(0); }
-                    100% { transform: translate(-50px, 200px) rotate(15deg); opacity: 0; }
-                }
-
-                @keyframes flyBottom2 {
-                    0% { transform: translate(0, 0) rotate(0); }
-                    100% { transform: translate(50px, 200px) rotate(-15deg); opacity: 0; }
-                }
-
-                @keyframes flyBottomRight {
-                    0% { transform: translate(0, 0) rotate(0); }
-                    100% { transform: translate(150px, 150px) rotate(-45deg); opacity: 0; }
-                }
-
-                @keyframes fadeIn {
-                    0% {
-                        opacity: 0;
-                    }
-                    100% {
-                        opacity: 1;
-                    }
-                }
-            `}</style>
         </div>
     );
 }
