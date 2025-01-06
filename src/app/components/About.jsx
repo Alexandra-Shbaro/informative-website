@@ -64,12 +64,11 @@ const LumiLanding = () => {
                                 <div className="w-full flex justify-center md:w-1/2">
                                     <img
                                         src={[
-                                            '/api/placeholder/400/400?text=Image 1',
-                                            '/api/placeholder/400/400?text=Image 2',
-                                            '/api/placeholder/400/400?text=Image 3',
-                                            '/api/placeholder/400/400?text=Image 4'
+                                            '/images/img1.jpg',
+                                            '/images/img4.jpg',
+                                            '/images/img2.jpg',
+                                            '/images/img3.jpg'
                                         ][i]}
-                                        alt={`Section ${i + 1} illustration`}
                                         className="w-[70%] h-auto rounded-lg transition-opacity duration-300 hover:opacity-80"
                                     />
                                 </div>
