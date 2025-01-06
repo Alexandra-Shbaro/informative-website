@@ -9,20 +9,31 @@ export default function Home() {
   const [bulbs, setBulbs] = useState([]);
 
   useEffect(() => {
-    const generateBulbs = (count) => {
-      const newBulbs = [];
-      for (let i = 0; i < count; i++) {
-        newBulbs.push({
-          top: Math.random() * 100,
-          left: Math.random() * 100,
-          size: Math.random() * 40 + 20,
-          delay: Math.random() * 2,
-        });
+    const generateBulbs = (count = 20, size = 40) => {
+      const bulbs = [];
+      const rows = 4; // Number of rows
+      const cols = 5; // Number of columns (rows * cols should equal `count`)
+
+      // Distribute bulbs in a grid-like pattern
+      for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
+          const top = row * (100 / rows) + Math.random() * 5; // Spread rows evenly, with slight random offset
+          const left = col * (100 / cols) + Math.random() * 5; // Spread columns evenly, with slight random offset
+          bulbs.push({
+            top: top,    // Top position (percentage)
+            left: left,  // Left position (percentage)
+            size: size,  // Same size for all
+            delay: Math.random() * 2 // Random animation delay (optional)
+          });
+        }
       }
-      return newBulbs;
+
+      // Shuffle bulbs randomly once for natural distribution
+      return bulbs.sort(() => Math.random() - 0.5);
     };
 
-    setBulbs(generateBulbs(20));
+    const bulbs = generateBulbs(20); // Generate 20 bulbs
+    setBulbs(bulbs);
     setIsMounted(true);
     const animateTimeout = setTimeout(() => setAnimate(true), 500);
     const textTimeout = setTimeout(() => setShowNewText(true), 2500);
