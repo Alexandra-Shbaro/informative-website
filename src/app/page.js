@@ -3,6 +3,8 @@ import './globals.css';
 import Banner from "./components/Banner";
 import dynamic from 'next/dynamic';
 import About from './components/About';
+import Barrier from './components/Barrier';
+import CinemaExperience from './components/Cinema';
 
 const Rules = dynamic(() => import('./components/Rules'), { ssr: false, });
 
@@ -27,6 +29,8 @@ export default function Home() {
       <Banner />
       <Rules />
       <About />
+      <Barrier/>
+      <CinemaExperience/>
     </>
   );
 }
