@@ -95,15 +95,11 @@ export default function Navbar() {
 
                         <div className="text-right">
                             <p>Contact Us</p>
-                            <a href="mailto:lumi@support.com" className="hover:underline">
-                                lumi@support.com
-                            </a>
+                            <a href="mailto:lumi@support.com" className="hover:underline">lumi@support.com</a>
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </>
     );
 }

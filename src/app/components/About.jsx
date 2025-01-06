@@ -24,7 +24,7 @@ const LumiLanding = () => {
     }, []);
 
     return (
-        <div className="min-h-screen bg-[#2C3333] overflow-hidden mt-3"> {/* Further reduced margin-top */}
+        <div className="min-h-screen bg-[#2C3333] overflow-hidden">
             {/* Animated Background */}
             <div className="fixed inset-0 opacity-30">
                 <svg className="w-full h-full">
@@ -34,14 +34,7 @@ const LumiLanding = () => {
                             <stop offset="100%" style={{ stopColor: '#FFD700', stopOpacity: 1 }} />
                         </linearGradient>
                     </defs>
-                    <pattern
-                        id="pattern"
-                        x="0"
-                        y="0"
-                        width="40"
-                        height="40"
-                        patternUnits="userSpaceOnUse"
-                    >
+                    <pattern id="pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
                         <circle cx="20" cy="20" r="1" fill="url(#grad1)" />
                     </pattern>
                     <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern)" />
@@ -50,12 +43,11 @@ const LumiLanding = () => {
 
             <div className="relative">
                 {/* Hero Section */}
-                <div className="mt-48 mb-28 flex items-center justify-center p-2"> {/* Further reduced padding */}
+                <div className="mt-28 mb-28 flex items-center justify-center p-2">
                     <div className="text-center max-w-4xl">
-                        
-                        <p className="text-[#FAFAFA] text-xl leading-snug"> {/* Reduced text size and line height */}
+                        <p className="text-[#FAFAFA] text-xl leading-snug">
                             The digital powerhouse that turns scattered efforts into a{' '}
-                            <span className="relative inline-block mx-1 px-1"> {/* Reduced margin and padding */}
+                            <span className="relative inline-block mx-1 px-1">
                                 <span className="relative z-10 text-[#FF8A00] font-semibold">
                                     symphonic
                                 </span>
@@ -66,23 +58,16 @@ const LumiLanding = () => {
                 </div>
 
                 {/* Content Sections */}
-                <div className="space-y-12 pb-16"> {/* Further reduced space between sections */}
+                <div>
                     {[...Array(4)].map((_, i) => (
-                        <section
-                            key={i}
-                            id={`section-${i}`}
-                            className={`relative ${i % 2 === 0 ? 'bg-[#2C3333]/50' : ''}`}
-                        >
-                            <div className="container mx-auto px-4 py-10"> {/* Further reduced padding */}
-                                <div
-                                    className={`flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                                        } items-center gap-4`}
-                                >
+                        <section key={i} id={`section-${i}`} className={`relative ${i % 2 === 0 ? 'bg-[#2C3333]/50' : ''}`}>
+                            <div className="container mx-auto px-4">
+                                <div className={`flex flex-col gap-12 ml-6 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} p-10 items-center`}>
                                     <div className="w-full md:w-1/2">
                                         <div className="relative group">
                                             <div className="absolute inset-0 bg-gradient-to-r from-[#FF8A00] to-[#FFD700] opacity-75 blur-xl group-hover:opacity-100 transition-opacity duration-500"></div>
-                                            <div className="relative bg-[#2C3333] p-6 rounded-xl"> {/* Reduced padding */}
-                                                <p className="text-lg text-[#FAFAFA] leading-relaxed"> {/* Reduced text size */}
+                                            <div className="relative bg-[#2C3333] p-10 rounded-xl">
+                                                <p className="text-lg text-[#FAFAFA] leading-relaxed">
                                                     {[
                                                         'We don\'t just automate processes—we orchestrate your brand\'s entire narrative.',
                                                         'Imagine a platform that\'s part strategist, part storyteller, and part efficiency engine.',
@@ -93,20 +78,8 @@ const LumiLanding = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="w-full md:w-1/2">
-                                        <div className="grid grid-cols-1 gap-4">
-                                            <div
-                                                key={0}
-                                                className="aspect-square rounded-lg bg-gradient-to-br from-[#FF8A00] to-[#FFD700] opacity-20 hover:opacity-40 transition-opacity duration-300"
-                                                style={{
-                                                    width: '80%', // Maintain the smaller size
-                                                    height: '80%',
-                                                    margin: 'auto', // Make boxes center-aligned
-                                                    padding: '8px', // Uniform padding
-                                                }} // Uniform margin and padding for consistency
-                                            />
-                                        </div>
-
+                                    <div className="w-full flex justify-center md:w-1/2">
+                                        <div key={0} className="aspect-square rounded-lg bg-gradient-to-br from-[#FF8A00] to-[#FFD700] opacity-20 hover:opacity-40 transition-opacity duration-300 w-[70%] h-[80%] " />
                                     </div>
                                 </div>
                             </div>
