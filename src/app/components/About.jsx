@@ -25,9 +25,6 @@ const LumiLanding = () => {
 
     return (
         <div className="min-h-screen bg-[#2C3333] overflow-hidden">
-            {/* Animated Background */}
-            {/*  */}
-
             <div className="relative">
                 {/* Hero Section */}
                 <div className="mt-28 mb-28 flex items-center justify-center p-2">
@@ -45,34 +42,41 @@ const LumiLanding = () => {
                 </div>
 
                 {/* Content Sections */}
-                <div>
-                    {[...Array(4)].map((_, i) => (
-                        <section key={i} id={`section-${i}`} className={`relative ${i % 2 === 0 ? 'bg-[#2C3333]/50' : ''}`}>
-                            <div className="container mx-auto px-4">
-                                <div className={`flex flex-col gap-12 ml-6 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} p-10 items-center`}>
-                                    <div className="w-full md:w-1/2">
-                                        <div className="relative group">
-                                            <div className="absolute inset-0 bg-gradient-to-r from-[#FF8A00] to-[#FFD700] opacity-75 blur-xl group-hover:opacity-100 transition-opacity duration-500"></div>
-                                            <div className="relative bg-[#2C3333] p-10 rounded-xl">
-                                                <p className="text-lg text-[#FAFAFA] leading-relaxed">
-                                                    {[
-                                                        'We don\'t just automate processes—we orchestrate your brand\'s entire narrative.',
-                                                        'Imagine a platform that\'s part strategist, part storyteller, and part efficiency engine.',
-                                                        'From conceptualization to execution, we\'re not just a tool—we\'re your strategic partner.',
-                                                        'Lumi cuts through complexity, delivering precision-targeted content that resonates.',
-                                                    ][i]}
-                                                </p>
-                                            </div>
+                {[...Array(4)].map((_, i) => (
+                    <section key={i} id={`section-${i}`} className={`relative ${i % 2 === 0 ? 'bg-[#2C3333]/50' : ''}`}>
+                        <div className="container mx-auto px-4">
+                            <div className={`flex flex-col gap-12 ml-6 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} p-10 items-center`}>
+                                <div className="w-full md:w-1/2">
+                                    <div className="relative group">
+                                        <div className="absolute inset-0 bg-gradient-to-r from-[#FF8A00] to-[#FFD700] opacity-75 blur-xl group-hover:opacity-100 transition-opacity duration-500"></div>
+                                        <div className="relative bg-[#2C3333] p-10 rounded-xl">
+                                            <p className="text-lg text-[#FAFAFA] leading-relaxed">
+                                                {[
+                                                    'We don\'t just automate processes—we orchestrate your brand\'s entire narrative.',
+                                                    'Imagine a platform that\'s part strategist, part storyteller, and part efficiency engine.',
+                                                    'From conceptualization to execution, we\'re not just a tool—we\'re your strategic partner.',
+                                                    'Lumi cuts through complexity, delivering precision-targeted content that resonates.',
+                                                ][i]}
+                                            </p>
                                         </div>
                                     </div>
-                                    <div className="w-full flex justify-center md:w-1/2">
-                                        <div key={0} className="aspect-square rounded-lg bg-gradient-to-br from-[#FF8A00] to-[#FFD700] opacity-20 hover:opacity-40 transition-opacity duration-300 w-[70%] h-[80%] " />
-                                    </div>
+                                </div>
+                                <div className="w-full flex justify-center md:w-1/2">
+                                    <img
+                                        src={[
+                                            '/api/placeholder/400/400?text=Image 1',
+                                            '/api/placeholder/400/400?text=Image 2',
+                                            '/api/placeholder/400/400?text=Image 3',
+                                            '/api/placeholder/400/400?text=Image 4'
+                                        ][i]}
+                                        alt={`Section ${i + 1} illustration`}
+                                        className="w-[70%] h-auto rounded-lg transition-opacity duration-300 hover:opacity-80"
+                                    />
                                 </div>
                             </div>
-                        </section>
-                    ))}
-                </div>
+                        </div>
+                    </section>
+                ))}
             </div>
         </div>
     );
