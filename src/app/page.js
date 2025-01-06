@@ -9,9 +9,24 @@ const Rules = dynamic(() => import('./components/Rules'), { ssr: false, });
 export default function Home() {
   return (
     <>
-    <Banner/>
-    <Rules/>
-    <LumiLanding/>
+      <div className="fixed inset-0 opacity-30 pointer-events-none">
+        <svg className="w-full h-full">
+          <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style={{ stopColor: '#FF8A00', stopOpacity: 1 }} />
+              <stop offset="100%" style={{ stopColor: '#FFD700', stopOpacity: 1 }} />
+            </linearGradient>
+          </defs>
+          <pattern id="pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+            <circle cx="20" cy="20" r="1" fill="url(#grad1)" />
+          </pattern>
+          <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern)" />
+        </svg>
+      </div>
+
+      <Banner />
+      <Rules />
+      <LumiLanding />
     </>
   );
 }
