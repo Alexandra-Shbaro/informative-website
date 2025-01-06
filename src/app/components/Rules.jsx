@@ -1,47 +1,60 @@
 "use client";
 import '../globals.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function Rules() {
-    const [isMounted, setIsMounted] = useState(false);
     const [animate, setAnimate] = useState(false);
     const [showNewText, setShowNewText] = useState(false);
     const [disappear, setDisappear] = useState(false);
+    const sectionRef = useRef(null);
 
     useEffect(() => {
-        setIsMounted(true);
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    // Start animation when the section is visible
+                    setAnimate(true);
 
-        const animateTimeout = setTimeout(() => setAnimate(true), 500);
-        const textTimeout = setTimeout(() => setShowNewText(true), 2500);
-        
-        const disappearTimeout = setTimeout(() => {
-            setDisappear(true);
-            document.getElementById("rules-box").style.display = "none";  
-        }, 3500); 
+                    const textTimeout = setTimeout(() => setShowNewText(true), 2000);
+                    const disappearTimeout = setTimeout(() => {
+                        setDisappear(true);
+                        const rulesBox = document.getElementById("rules-box");
+                        if (rulesBox) rulesBox.style.display = "none";
+                    }, 3000);
+
+                    return () => {
+                        clearTimeout(textTimeout);
+                        clearTimeout(disappearTimeout);
+                    };
+                }
+            },
+            { threshold: 0.3 } // Trigger when 30% of the section is visible
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
 
         return () => {
-            clearTimeout(animateTimeout);
-            clearTimeout(textTimeout);
-            clearTimeout(disappearTimeout);
+            if (sectionRef.current) {
+                observer.unobserve(sectionRef.current);
+            }
         };
     }, []);
 
-    if (!isMounted) {
-        return null;
-    }
-
     return (
-        <div className="flex items-center justify-center min-h-screen bg-logoOrange">
+        <div ref={sectionRef} className="flex items-center justify-center min-h-screen bg-logoOrange">
             <div className="relative">
                 <div className={`relative ${animate ? 'animate-[shake_0.8s_ease-in-out]' : ''}`}>
                     <div
-                        id="rules-box" 
+                        id="rules-box"
                         className={`border-4 border-white p-8 text-4xl font-bold text-white ${animate && !disappear ? 'animate-[disappear_0.8s_ease-in-out_forwards]' : ''} relative`}>
                         RULES
                     </div>
 
                     {animate && (
                         <>
+                            {/* Add all animated borders */}
                             <div className="absolute top-0 left-0 w-1/4 h-1/4 border-t-4 border-l-4 border-white animate-[flyTopLeft_1.5s_ease-in-out_forwards_0.8s]" />
                             <div className="absolute top-0 left-1/4 w-1/4 h-1/4 border-t-4 border-white animate-[flyTop1_1.5s_ease-in-out_forwards_0.8s]" />
                             <div className="absolute top-0 right-1/4 w-1/4 h-1/4 border-t-4 border-white animate-[flyTop2_1.5s_ease-in-out_forwards_0.8s]" />
@@ -56,7 +69,7 @@ export default function Rules() {
                     )}
                 </div>
 
-                <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-3xl font-bold text-white text-center opacity-0 ${showNewText ? 'animate-[fadeIn_1s_ease-in-out_forwards]' : ''} `}>
+                <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-3xl font-bold text-white text-center opacity-0 ${showNewText ? 'animate-[fadeIn_1s_ease-in-out_forwards]' : ''}`}>
                     <div className="w-96 md:w-[32rem] lg:w-[40rem]">
                         <p className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                             Lumi breaks old marketing rules

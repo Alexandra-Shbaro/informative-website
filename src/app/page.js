@@ -1,10 +1,11 @@
 "use client";
 import './globals.css';
-import Rules from "./components/Rules";
 import Banner from "./components/Banner";
+import dynamic from 'next/dynamic';
+
+const Rules = dynamic(() => import('./components/Rules'), { ssr: false, });
 
 export default function Home() {
-
   return (
     <>
     <Banner/>
