@@ -66,20 +66,13 @@ export default function Navbar() {
                         </a>
                     </li>
                     <li>
-                        <Link href="/#about">
-                        <a className="block p-3 hover:lightGrey rounded-md">
+                        <Link href="/#about" className="block p-3 hover:lightGrey rounded-md">
                             About
-                        </a>
                         </Link>
                     </li>
                     <li>
                         <a href="/automation" className="block p-3 hover:lightGrey rounded-md">
                             Agency Automation
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/pricing" className="block p-3 hover:lightGrey rounded-md">
-                            Pricing
                         </a>
                     </li>
                     <li>
@@ -114,8 +107,8 @@ export default function Navbar() {
 
                         <div className="text-right">
                             <p>Contact Us</p>
-                            <a href="mailto:lumi@support.com" className="hover:underline">
-                                lumi@support.com
+                            <a href="mailto:luminarysupp@gmail.com" className="hover:underline">
+                                luminarysupp@gmail.com
                             </a>
                         </div>
                     </div>
