@@ -59,19 +59,7 @@ export default function AgencyAutomation() {
           </p>
 
           {/* Example of Progress Sharing (This can be a dashboard or progress bar) */}
-          <div className="flex justify-center gap-10">
-            <div className="bg-lightGrey p-8 rounded-lg shadow-lg w-1/3">
-              <h3 className="text-xl font-semibold text-logoOrange mb-4">Progress Dashboard</h3>
-              <p className="text-mediumGrey mb-4">
-                Keep your clients updated with a personalized dashboard that highlights the key metrics and progress of each campaign.
-              </p>
-              <div className="w-full h-2 bg-lightGrey rounded-full">
-                <div className="w-3/4 h-full bg-logoOrange rounded-full"></div>
-              </div>
-              <p className="text-mediumGrey text-center mt-2">75% of the strategy phase completed</p>
-            </div>
-
-            <div className="bg-lightGrey p-8 rounded-lg shadow-lg w-1/3">
+          <div className="bg-lightGrey p-8 rounded-lg shadow-lg w-1/3">
               <h3 className="text-xl font-semibold text-logoOrange mb-4">Real-Time Updates</h3>
               <p className="text-mediumGrey mb-4">
                 Clients can receive real-time updates on campaign performance, changes, and results to maintain alignment with agency objectives.
@@ -81,6 +69,21 @@ export default function AgencyAutomation() {
               </div>
               <p className="text-mediumGrey text-center mt-2">50% of the design phase completed</p>
             </div>
+
+          <div className="flex justify-center gap-10">
+            <div className="bg-lightGrey p-8 rounded-lg shadow-lg w-1/3">
+              <h3 className="text-xl font-semibold text-logoOrange mb-4">Approve Progress</h3>
+              <p className="text-mediumGrey mb-4">
+              Throughout each phase of the project, clients receive detailed progress updates via Lumi. <br></br>
+              Once they provide their approval, the agency moves forward with the next phase of the campaign. <br></br>
+              This streamlined approval process ensures smooth collaboration between your agency and the client.              </p>
+              <div className="w-full h-2 bg-lightGrey rounded-full">
+                <div className="w-3/4 h-full bg-logoOrange rounded-full"></div>
+              </div>
+              <p className="text-mediumGrey text-center mt-2">75% of the strategy phase completed</p>
+            </div>
+
+            
           </div>
         </section>
 
