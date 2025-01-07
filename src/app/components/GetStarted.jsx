@@ -2,7 +2,7 @@ import React from 'react';
 
 const GetStartedSection = () => {
   return (
-    <section className="w-full py-12 flex flex-col items-center justify-center space-y-6 mt-28">
+    <section className="w-full py-12 flex flex-col items-center justify-center space-y-6 mt-28 mb-28">
       <h2 className="text-2xl md:text-3xl font-semibold text-gray-800">
         Go on... take the plunge
       </h2>
