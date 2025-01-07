@@ -1,37 +1,60 @@
 "use client";
 
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 
 export default function Barrier() {
+    const sectionRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
+
     useEffect(() => {
-        const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsVisible(entry.isIntersecting);
+            },
+            { threshold: 0.1 }
+        );
 
-        gsap.set(".heading", { opacity: 0, y: 50 });
-        gsap.set(".subtext", { opacity: 0, y: 30 });
-        gsap.set(".emphasis", { opacity: 0, y: 20 });
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
 
-        tl.to(".heading", {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-        })
-        .to(".subtext", {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-        }, "-=0.5")  
-        .to(".emphasis", {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            delay: 0.1,
-        }, "-=0.3"); 
+        return () => {
+            if (sectionRef.current) {
+                observer.unobserve(sectionRef.current);
+            }
+        };
+    }, []);
 
-    }, []); 
+    useEffect(() => {
+        if (isVisible) {
+            gsap.from(".heading", {
+                y: 40,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power2.out"
+            });
+
+            gsap.from(".subtext", {
+                y: 40,
+                opacity: 0,
+                duration: 0.8,
+                delay: 0.2,
+                ease: "power2.out"
+            });
+
+            gsap.from(".emphasis", {
+                y: 20,
+                opacity: 0,
+                duration: 0.6,
+                delay: 0.4,
+                ease: "power2.out"
+            });
+        }
+    }, [isVisible]);
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-white p-4">
+        <div ref={sectionRef} className="flex flex-col items-center justify-center min-h-screen p-4">
             <div className="text-center space-y-2">
                 <h1 className="heading text-3xl md:text-4xl lg:text-5xl font-light text-gray-800">
                     Lumi isn't just software.

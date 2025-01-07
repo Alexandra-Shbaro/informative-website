@@ -26,7 +26,6 @@ const About = () => {
     return (
         <div className="min-h-screen bg-[#2C3333] overflow-hidden">
             <div className="relative">
-                {/* Hero Section */}
                 <div className="mt-28 mb-28 flex items-center justify-center p-2">
                     <div className="text-center max-w-4xl">
                         <p className="text-[#FAFAFA] text-xl leading-snug">
