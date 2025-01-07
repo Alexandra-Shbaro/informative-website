@@ -1,16 +1,8 @@
-// pages/agency-automation.js
-import Head from 'next/head';
 
 export default function AgencyAutomation() {
   return (
     <>
-      <Head>
-        <title>Agency Automation | Lumi Platform</title>
-        <meta name="description" content="Discover how Lumi automates the digital marketing process through four key phases." />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className="bg-offWhite text-softBlack">
+      <main className="text-softBlack">
         <section className="py-16 text-center">
           <h1 className="text-4xl font-bold text-logoOrange mb-4">Agency Automation with Lumi</h1>
           <p className="text-lg text-mediumGrey mx-auto w-4/5 md:w-2/3">
@@ -20,47 +12,45 @@ export default function AgencyAutomation() {
 
         <section className="py-16 px-6 md:px-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {/* Phase 1: Strategy */}
             <div className="bg-lightGrey p-8 rounded-lg shadow-lg">
               <h2 className="text-2xl font-semibold text-logoOrange mb-4">Phase 1: Strategy</h2>
               <p className="text-mediumGrey">
-                {/* Replace with your description of the strategy phase */}
-                Define your digital marketing goals, target audience, and key performance indicators (KPIs) to set the foundation for success.
+              Begin by gathering essential details about your client, including their brand identity and specific objectives.<br></br><br></br>
+              
+              Follow this with comprehensive market analysis that examines their mission statement and conducts standard assessments - evaluate their strengths, weaknesses, opportunities, and threats (SWOT), define their segmentation, targeting, and positioning (STP), and analyze their marketing mix (product, price, place, and promotion). <br></br><br></br>
+              
+              Based on these insights, develop both a creative approach to shape the campaign's direction and a complementary technology strategy to support its execution.
               </p>
             </div>
 
-            {/* Phase 2: Design */}
             <div className="bg-lightGrey p-8 rounded-lg shadow-lg">
               <h2 className="text-2xl font-semibold text-logoOrange mb-4">Phase 2: Design</h2>
               <p className="text-mediumGrey">
-                {/* Replace with your description of the design phase */}
-                Create visually compelling and user-friendly designs that resonate with your audience and align with your strategy.
+               Using insights from the strategic planning phase, develop an organized structure for how the information will flow and be categorized within the design. <br></br><br></br> Once this information framework is established, proceed with creating the actual design elements and visual components.
               </p>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10">
-            {/* Phase 3: Prototype */}
             <div className="bg-lightGrey p-8 rounded-lg shadow-lg">
               <h2 className="text-2xl font-semibold text-logoOrange mb-4">Phase 3: Prototype</h2>
               <p className="text-mediumGrey">
-                {/* Replace with your description of the prototype phase */}
-                Build interactive prototypes to visualize the user experience and test different design concepts for effectiveness.
+                Build interactive prototypes to visualize the user experience and test different design concepts for effectiveness.<br></br><br></br>
+                Use that prototype as the foundation to develop a digital platform in the form of a website.
               </p>
             </div>
 
-            {/* Phase 4: Analysis */}
             <div className="bg-lightGrey p-8 rounded-lg shadow-lg">
               <h2 className="text-2xl font-semibold text-logoOrange mb-4">Phase 4: Analysis</h2>
               <p className="text-mediumGrey">
-                {/* Replace with your description of the analysis phase */}
-                Analyze data from the campaign to optimize performance and make informed decisions for future marketing efforts.
+              After launching the campaign, clients will connect their Instagram accounts to the platform. <br></br><br></br>
+              Lumi will gather performance data and metrics from their posts for ongoing monitoring. <br></br><br></br>
+              Based on these insights, provide actionable analysis to help clients optimize their posts and enhance their personal branding strategy on Instagram.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Clients Section: Share Progress with Clients */}
         <section className="py-16 px-6 md:px-20">
           <h2 className="text-3xl font-semibold text-logoOrange text-center mb-8">Seamlessly Share Progress with Your Clients</h2>
           <p className="text-lg text-mediumGrey text-center mb-8">
