@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 import About from './components/About';
 import Barrier from './components/Barrier';
 import CinemaExperience from './components/Cinema';
+import GetStartedSection from './components/GetStarted';
 
 const Rules = dynamic(() => import('./components/Rules'), { ssr: false, });
 
@@ -31,6 +32,7 @@ export default function Home() {
       <About />
       <Barrier/>
       <CinemaExperience/>
+      <GetStartedSection/>
     </>
   );
 }
