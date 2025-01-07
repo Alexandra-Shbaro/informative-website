@@ -25,7 +25,7 @@ const About = () => {
     }, []);
 
     return (
-        <div className="min-h-screen bg-[#2C3333] overflow-hidden">
+        <div id="about" className="min-h-screen bg-[#2C3333] overflow-hidden">
             <div className="relative">
                 <div className="mt-28 mb-28 flex items-center justify-center p-2">
                     <div className="text-center max-w-4xl">

@@ -3,6 +3,7 @@
 import '../globals.css';
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -65,9 +66,11 @@ export default function Navbar() {
                         </a>
                     </li>
                     <li>
-                        <a href="/about" className="block p-3 hover:lightGrey rounded-md">
+                        <Link href="/#about">
+                        <a className="block p-3 hover:lightGrey rounded-md">
                             About
                         </a>
+                        </Link>
                     </li>
                     <li>
                         <a href="/automation" className="block p-3 hover:lightGrey rounded-md">
