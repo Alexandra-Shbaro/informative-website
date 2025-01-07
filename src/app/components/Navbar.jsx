@@ -9,7 +9,7 @@ export default function Navbar() {
 
     return (
         <>
-            <nav className="flex justify-between items-center w-full h-14 p-5">
+            <nav className="flex justify-between items-center w-full h-14 p-16">
                 <div className="relative w-32 h-14">
                     <Image
                         src="/images/logoSVG.svg"

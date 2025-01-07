@@ -36,7 +36,7 @@ export default function CinemaExperience() {
     }, [isVisible]);
 
     return (
-        <div className="relative">
+        <div className="relative p-5">
             <video
                 ref={videoRef}
                 className="w-full max-w-[100%] h-auto rounded-lg shadow-2xl z-10 border-8 border-transparent 

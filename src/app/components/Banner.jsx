@@ -3,48 +3,48 @@ import '../globals.css';
 import { useState, useEffect } from 'react';
 
 export default function Banner() {
-  
+
   const [bulbs, setBulbs] = useState([]);
 
   useEffect(() => {
-    const generateBulbs = (count = 20, size = 40) => {
+    const generateBulbs = (count = 20, size = 40, padding = 2) => {
       const bulbs = [];
-      const rows = 4; 
-      const cols = 5; 
-    
+      const rows = 4;
+      const cols = 5;
+
       for (let row = 0; row < rows; row++) {
         for (let col = 0; col < cols; col++) {
           if (row === col && !(row === 0 && col === 0)) {
             continue;
           }
-    
-          const top = row * (100 / rows) + Math.random() * 5; 
-          const left = col * (100 / cols) + Math.random() * 5; 
+
+          const top = padding + row * ((100 - 2 * padding) / rows) + Math.random() * 5;
+          const left = padding + col * ((100 - 2 * padding) / cols) + Math.random() * 5;
           bulbs.push({
-            top: top,    
-            left: left,  
-            size: size,  
-            delay: Math.random() * 2 
+            top: top,
+            left: left,
+            size: size,
+            delay: Math.random() * 2
           });
         }
       }
-    
+
       return bulbs.sort(() => Math.random() - 0.5);
     };
-    
-    const bulbs = generateBulbs(20); 
+
+    const bulbs = generateBulbs(20, 40, 2); // Adjust padding as needed
     setBulbs(bulbs);
-    
   }, []);
+
 
   return (
     <>
-      <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+      <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-8">
         <div className="absolute inset-0 -z-10">
           {bulbs.map((bulb, i) => (
             <div
               key={`bulb-${i}`}
-              className="absolute animate-float"
+              className="absolute animate-float pl-10"
               style={{
                 top: `${bulb.top}vh`,
                 left: `${bulb.left}vw`,
