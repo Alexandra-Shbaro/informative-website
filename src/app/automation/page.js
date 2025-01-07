@@ -52,30 +52,32 @@ export default function AgencyAutomation() {
                 </section>
 
                 <section className="py-16 px-6 md:px-20">
-                    <h2 className="text-3xl font-semibold text-logoOrange text-center mb-8">Seamlessly Share Progress with Your Clients</h2>
+                    <h2 className="text-3xl font-semibold text-logoOrange text-center mb-8">
+                        Seamlessly Share Progress with Your Clients
+                    </h2>
                     <p className="text-lg text-mediumGrey text-center mb-8">
                         Lumi enables agencies to effortlessly share real-time progress with clients, ensuring transparency and collaboration throughout the digital marketing journey.
                         With Lumi, clients can stay informed at every phase with visual reports and interactive dashboards.
                     </p>
 
-                    <div className="bg-lightGrey p-8 rounded-lg shadow-lg w-1/3">
-                        <h3 className="text-xl font-semibold text-logoOrange mb-4">Real-Time Updates</h3>
-                        <p className="text-mediumGrey mb-4">
-                            Clients can receive real-time updates on campaign performance, changes, and results to maintain alignment with agency objectives.
-                        </p>
-                    </div>
+                    <div className="flex flex-col md:flex-row justify-center gap-10">
+                        <div className="bg-lightGrey p-8 rounded-lg shadow-lg w-full md:w-1/3">
+                            <h3 className="text-xl font-semibold text-logoOrange mb-4">Real-Time Updates</h3>
+                            <p className="text-mediumGrey">
+                                Clients can receive real-time updates on campaign performance, changes, and results to maintain alignment with agency objectives.
+                            </p>
+                        </div>
 
-                    <div className="flex justify-center gap-10">
-                        <div className="bg-lightGrey p-8 rounded-lg shadow-lg w-1/3">
+                        <div className="bg-lightGrey p-8 rounded-lg shadow-lg w-full md:w-1/3">
                             <h3 className="text-xl font-semibold text-logoOrange mb-4">Approve Progress</h3>
-                            <p className="text-mediumGrey mb-4">
-                                Throughout each phase of the project, clients receive detailed progress updates via Lumi. <br></br>
-                                Once they provide their approval, the agency moves forward with the next phase of the campaign. <br></br>
-                                This streamlined approval process ensures smooth collaboration between your agency and the client.              
+                            <p className="text-mediumGrey">
+                                Throughout each phase of the project, clients receive detailed progress updates via Lumi. Once they provide their approval, the agency moves forward
+                                with the next phase of the campaign. This streamlined approval process ensures smooth collaboration between your agency and the client.
                             </p>
                         </div>
                     </div>
                 </section>
+
             </main>
         </>
     )
