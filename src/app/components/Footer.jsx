@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Facebook, Twitter, Instagram, Linkedin, Mail, ArrowUp } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Mail, ArrowUp } from 'lucide-react';
 
 const Footer = () => {
     const [showScroll, setShowScroll] = useState(false);
@@ -39,9 +39,7 @@ const Footer = () => {
 
 
             <div className="max-w-7xl mx-auto px-4 py-12">
-                {/* Main Footer Content */}
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    {/* Brand Column */}
                     <div className="space-y-4">
                         <h2 className="text-2xl font-bold text-logoOrange">Lumi</h2>
                         <p className="text-sm">
@@ -51,56 +49,48 @@ const Footer = () => {
                             <Facebook className="w-5 h-5 hover:text-logoOrange cursor-pointer" />
                             <Twitter className="w-5 h-5 hover:text-logoOrange cursor-pointer" />
                             <Instagram className="w-5 h-5 hover:text-logoOrange cursor-pointer" />
-                            <Linkedin className="w-5 h-5 hover:text-logoOrange cursor-pointer" />
                         </div>
                     </div>
 
-                    {/* Quick Links */}
                     <div>
                         <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
                         <ul className="space-y-2">
                             <li><a href="#" className="hover:text-logoOrange">About Us</a></li>
-                            <li><a href="#" className="hover:text-logoOrangeorange-500">Services</a></li>
-                            <li><a href="#" className="hover:text-logoOrange">Projects</a></li>
-                            <li><a href="#" className="hover:text-logoOrange">Blog</a></li>
+                            <li><a href="#" className="hover:text-logoOrangeorange-500">Agency Automation</a></li>
+                            <li><a href="#" className="hover:text-logoOrange">Pricing</a></li>
                         </ul>
                     </div>
 
-                    {/* Services */}
                     <div>
-                        <h3 className="text-lg font-semibold mb-4">Services</h3>
+                        <h3 className="text-lg font-semibold mb-4">Features</h3>
                         <ul className="space-y-2">
-                            <li><a href="#" className="hover:text-logoOrange">Web Development</a></li>
-                            <li><a href="#" className="hover:text-logoOrange">Mobile Apps</a></li>
-                            <li><a href="#" className="hover:text-logoOrange">Cloud Solutions</a></li>
-                            <li><a href="#" className="hover:text-logoOrange">Consulting</a></li>
+                            <li>Real-Time Collaboration</li>
+                            <li>Customizable Dashboards</li>
+                            <li>AI-Powered Insights</li>
+                            <li>Secure Data Management</li>
                         </ul>
                     </div>
 
-                    {/* Contact Info */}
                     <div>
                         <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
                         <div className="space-y-2">
                             <p className="flex items-center gap-2">
                                 <Mail className="w-4 h-4" />
-                                contact@lumi.com
+                                lumi@support.com
                             </p>
-                            <p>123 Tech Street</p>
-                            <p>Digital City, DC 12345</p>
+                            <p>Beirut Digital District</p>
+                            <p>Beirut, Lebanon</p>
                         </div>
                     </div>
                 </div>
 
-                {/* Bottom Bar */}
                 <div className="border-t border-offWhite mt-8 pt-8">
-                    <div className="flex flex-col md:flex-row justify-between items-center">
-                        <p className="text-sm">© 2025 Lumi. All rights reserved.</p>
+                 
+                        
                         <div className="flex space-x-6 mt-4 md:mt-0">
-                            <a href="#" className="text-sm hover:text-logoOrange">Privacy Policy</a>
-                            <a href="#" className="text-sm hover:text-logoOrange">Terms of Service</a>
-                            <a href="#" className="text-sm hover:text-logoOrange">Cookie Policy</a>
+                        <p className="text-sm">© 2025 Lumi. All rights reserved.</p>
                         </div>
-                    </div>
+                    
                 </div>
             </div>
         </footer>
