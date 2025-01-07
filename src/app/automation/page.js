@@ -1,13 +1,14 @@
-import React from 'react';
+// pages/agency-automation.js
+import Head from 'next/head';
 
 export default function AgencyAutomation() {
   return (
     <>
-      
+      <Head>
         <title>Agency Automation | Lumi Platform</title>
         <meta name="description" content="Discover how Lumi automates the digital marketing process through four key phases." />
         <link rel="icon" href="/favicon.ico" />
-      
+      </Head>
 
       <main className="bg-offWhite text-softBlack">
         <section className="py-16 text-center">
@@ -59,6 +60,7 @@ export default function AgencyAutomation() {
           </div>
         </section>
 
+        {/* Clients Section: Share Progress with Clients */}
         <section className="py-16 px-6 md:px-20">
           <h2 className="text-3xl font-semibold text-logoOrange text-center mb-8">Seamlessly Share Progress with Your Clients</h2>
           <p className="text-lg text-mediumGrey text-center mb-8">
@@ -89,6 +91,42 @@ export default function AgencyAutomation() {
               </div>
               <p className="text-mediumGrey text-center mt-2">50% of the design phase completed</p>
             </div>
+          </div>
+        </section>
+
+        {/* Hierarchy Tree Section */}
+        <section className="py-16 px-6 md:px-20">
+          <h2 className="text-3xl font-semibold text-logoOrange text-center mb-8">Hierarchy of Roles and Workflow</h2>
+          <p className="text-lg text-mediumGrey text-center mb-8">
+            Below is a visual representation of the roles and workflow in Lumi's platform, showing the structure and interactions between teams and clients.
+          </p>
+
+          {/* SVG Hierarchy Tree */}
+          <div className="flex justify-center">
+            <svg className="w-full max-w-3xl" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+              {/* Root Node */}
+              <circle cx="250" cy="30" r="20" fill="logoOrange" />
+              <text x="250" y="30" fontSize="12" textAnchor="middle" fill="white">Agency</text>
+
+              {/* Connecting Lines */}
+              <line x1="250" y1="50" x2="120" y2="100" stroke="logoOrange" strokeWidth="2" />
+              <line x1="250" y1="50" x2="380" y2="100" stroke="logoOrange" strokeWidth="2" />
+              <line x1="120" y1="120" x2="90" y2="170" stroke="logoOrange" strokeWidth="2" />
+              <line x1="380" y1="120" x2="410" y2="170" stroke="logoOrange" strokeWidth="2" />
+
+              {/* Roles */}
+              <circle cx="120" cy="100" r="20" fill="logoYellow" />
+              <text x="120" y="100" fontSize="12" textAnchor="middle" fill="white">Client Manager</text>
+
+              <circle cx="380" cy="100" r="20" fill="logoYellow" />
+              <text x="380" y="100" fontSize="12" textAnchor="middle" fill="white">Marketing Specialist</text>
+
+              <circle cx="90" cy="170" r="20" fill="logoYellow" />
+              <text x="90" y="170" fontSize="12" textAnchor="middle" fill="white">Client</text>
+
+              <circle cx="410" cy="170" r="20" fill="logoYellow" />
+              <text x="410" y="170" fontSize="12" textAnchor="middle" fill="white">Creative Team</text>
+            </svg>
           </div>
         </section>
       </main>
