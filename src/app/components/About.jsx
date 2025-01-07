@@ -41,7 +41,6 @@ const About = () => {
                     </div>
                 </div>
 
-                {/* Content Sections */}
                 {[...Array(4)].map((_, i) => (
                     <section 
                         key={i} 
@@ -94,6 +93,7 @@ const About = () => {
                     </section>
                 ))}
             </div>
+            <div className="mb-40"></div>
         </div>
         
     );
