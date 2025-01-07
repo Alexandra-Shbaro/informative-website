@@ -22,11 +22,7 @@ export default function Navbar() {
                 </div>
 
                 <div className="flex items-center justify-end space-x-4">
-                    <a
-                        href="/"
-                        className="px-4 py-2 text-white rounded-md"
-                        style={{ backgroundColor: '#ff8a00' }}
-                    >
+                    <a href="/" className="px-4 py-2 text-white rounded-md bg-logoOrange">
                         Get Started
                     </a>
 
@@ -42,10 +38,7 @@ export default function Navbar() {
             </nav>
 
             {isOpen && (
-                <div
-                    className="fixed inset-0 bg-black bg-opacity-50 z-40"
-                    onClick={() => setIsOpen(false)}
-                />
+                <div className="fixed inset-0 bg-black bg-opacity-50 z-40" onClick={() => setIsOpen(false)}/>
             )}
 
             <div
