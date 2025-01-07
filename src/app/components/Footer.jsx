@@ -26,7 +26,6 @@ const Footer = () => {
 
     return (
         <footer className="bg-softBlack text-offWhite relative z-10">
-            {/* Scroll to Top Button */}
             <button
                 onClick={scrollToTop}
                 className={`fixed right-8 bottom-20 bg-gradient-to-r from-logoOrange to-logoYellow p-3 rounded-full shadow-lg 
